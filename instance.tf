@@ -13,17 +13,17 @@ resource "azurerm_virtual_machine" "Test02-instance" {
   storage_image_reference {
     publisher = "MicrosoftWindowsServer"
     offer     = "WindowsServer"
-    sku       = "2019-Datacenter"
+    sku       = "2019-Datacenter-Core"
     version   = "latest"
   }
-  
+
   storage_os_disk {
 	name              = "${var.prefix}-OSdisk01"
     caching           = "ReadWrite"
 	create_option     = "FromImage"
-	managed_disk_type = "Standard_LRS"  
+	managed_disk_type = "Standard_LRS"
   }
-  
+
   os_profile {
     computer_name  = "AZVMWin01"
     admin_username = "winusr"
